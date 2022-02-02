@@ -1,15 +1,16 @@
----
 kind: pipeline
 type: docker
 name: hello-world
+
 steps:
-- name: docker
+- name: docker  
   image: plugins/docker
   settings:
-    repo:<dockerhub_username>/docker-hello-world
+    # registry: docker.io
+    repo: hrittik/hellloworld
     username:
       from_secret: docker_username
     password:
       from_secret: docker_password
-    tags:
+    tags: 
       - latest
